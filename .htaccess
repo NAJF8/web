@@ -1,0 +1,19 @@
+# الموقع الرئيسي: منع عرض المجلدات + رابط مختصر /creative لصفحة الإنتاج الإبداعي
+Options -Indexes
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # يخبر PHP أن الروابط المختصرة تعمل (pretty_urls في app/site.php)، وبدونها تُستخدم creative.php
+  RewriteRule ^ - [E=ALASAS_REWRITE:1]
+  # /creative/ ← /creative (حتى تعمل روابط css/ و js/ النسبية)
+  RewriteCond %{REQUEST_URI} ^(.*)/creative/$
+  RewriteRule ^creative/$ %1/creative [R=301,L]
+  RewriteRule ^creative$ creative.php [L]
+</IfModule>
+
+<FilesMatch "^\.(?!well-known)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>

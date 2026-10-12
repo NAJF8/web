@@ -1,0 +1,14 @@
+# أسرار وملفات تشغيل يُنشئها الموقع على الخادم — لا تُرفع إلى git
+app/config.php
+install/.lock
+app/cache/*
+!app/cache/.keep
+app/logs/*
+!app/logs/.keep
+uploads/*
+!uploads/.htaccess
+!uploads/index.html
+*.zip
+__pycache__/
+app/storage/*
+!app/storage/.htaccess
