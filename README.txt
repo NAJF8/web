@@ -1,0 +1,1 @@
+AL ASAS static GitHub Pages frontend. Backend: Supabase isolated alasas_web schema via Edge Function alasas-web-api. Admin PHP cannot run on GitHub Pages. File uploads unavailable. Content is a snapshot of the archived website public site cache. Verify all data before production use.
